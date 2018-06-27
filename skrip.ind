@@ -1,0 +1,9 @@
+$a=0
+jika $a==0 maka
+tulis "a iku nilainya noll!!!"
+endjika
+
+ulang $a<5 lakukan
+tulis "pengulangan a "
+$a=$a+1
+endulang
