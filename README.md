@@ -1,5 +1,5 @@
-# Teknik-Kompilasi
-Teknik Kompilasi membuat bahsa pemrograman sendiri berbasis bahasa python. Spesifikasi : Python V2
+# Teknik Kompilasi
+Teknik Kompilasi membuat bahsa pemrograman sendiri berbasis bahasa python. </ br> Spesifikasi : Python V2
 
 ### Langkah untuk menjalankan:
 kompiler.py skrip.ind
