@@ -55,11 +55,6 @@ def lex(filecontents):
                 varStarted = 0
             tok = ""
             selesai=1
-        # elif varStarted == 1 and (tok == "+" or tok == "-" or tok == "/" or tok == "*" or tok == "(" or tok == ")"):
-        #     tokens.append("VAR:"+var)
-        #     n+=1
-        #     var = ""
-        #     varStarted = 0
         elif tok == "=" and state == 0:
             if expr != "" and isexpr == 0:
                 tokens.append("NUM:" + expr)
@@ -115,7 +110,7 @@ def lex(filecontents):
                     var = ""
                     varStarted = 0
             elif tok == "\n":
-                print "tok enter"
+               # print "tok enter"
             # elif tok == "+" or tok == "-" or tok == "/" or tok == "*" or tok == "(" or tok == ")":
             #     if var != "":
             #         tokens.append("VAR:"+var)
@@ -219,32 +214,12 @@ def lex(filecontents):
             pesan= "Sintax Error : Periksa kembali argumen baris ke - "+str(line)
             print(pesan)
             exit()
-    # symbols["variable"] = "Hello"
-    # print(symbols)
-    # return ""
+
     return tokens
 
 def evalExpression(expr):
 
     return eval(expr)
-
-    # expr = "," + expr
-    # i = len(expr) - 1
-    # num = ""
-    # while i>= 0:
-    #     if (expr[i] == "+" or expr[i] == "-" or expr[i] == "/" or expr[i] == "*" or expr[i] == "%"):
-    #         num = num[::-1]
-    #         num_stack.append(num)
-    #         num_stack.append(expr[i])
-    #         num = ""
-    #     elif (expr[i] ==","):
-    #         num = num[::-1]
-    #         num_stack.append(num)
-    #         num = ""
-    #     else:
-    #         num += expr[i]
-    #     i-=1
-    # print(num_stack)
 
 
 def doNULIS(toNULIS):
@@ -307,49 +282,6 @@ def parse(toks):
     i=0
     # print n_toks_loop
     while(i < len(toks)):
-        # if jikamaka == 0 :
-        #     if toks[i] == "ENDIF":
-        #         jikamaka = 0
-        #         i+=1
-        #     elif toks[i] + " " + toks[i+1][0:6] == "NULIS STRING" or toks[i] + " " + toks[i+1][0:3] == "NULIS NUM" or toks[i] + " " + toks[i+1][0:4] == "NULIS EXPR" or toks[i] + " " + toks[i+1][0:3] == "NULIS VAR":
-        #         if toks[i+1][0:6] == "STRING":
-        #             doNULIS(toks[i+1])
-        #         elif toks[i+1][0:3] == "NUM":
-        #             doNULIS(toks[i+1])
-        #         elif toks[i+1][0:4] == "EXPR":
-        #             doNULIS(toks[i+1])
-        #         elif toks[i+1][0:3] == "VAR":
-        #             doNULIS(getVARIABLE(toks[i+1]))
-        #         i+=2
-        #     elif toks[i][0:3] + " " + toks[i+1] + " " + toks[i+2][0:6] == "VAR EQUALS STRING" or toks[i][0:3] + " " + toks[i+1] + " " + toks[i+2][0:3] == "VAR EQUALS NUM" or toks[i][0:3] + " " + toks[i+1] + " " + toks[i+2][0:4] == "VAR EQUALS EXPR" or toks[i][0:3] + " " + toks[i+1] + " " + toks[i+2][0:3] == "VAR EQUALS VAR":
-        #         if toks[i+2][0:6] == "STRING":
-        #             doASSIGN(toks[i], toks[i+2])
-        #         elif toks[i+2][0:3] == "NUM":
-        #             doASSIGN(toks[i], toks[i+2])
-        #         elif toks[i+2][0:4] == "EXPR":
-        #             doASSIGN(toks[i], "NUM:" + str(evalExpression(toks[i+2][5:])))
-        #         elif toks[i+2][0:3] == "VAR":
-        #             doASSIGN(toks[i], getVARIABLE(toks[i+2]))
-        #         i+=3
-        #     elif toks[i] + " " + toks[i+1][0:6] + " " + toks[i+2][0:3] == "BACA STRING VAR":
-        #         getBACA(toks[i+1][7:],toks[i+2][4:])
-        #         i+=3
-        #     elif toks[i] + " " + toks[i+1][0:3] + " " + toks[i+2] + " " + toks[i+3][0:3] + " " + toks[i+4] == "JIKA NUM EQEQ NUM MAKA":
-        #         jikamaka += 1
-        #         if toks[i+1][4:] == toks[i+3][4:]:
-        #             kondisi=1
-        #         else:
-        #             kondisi=0
-        #         i+=5
-        #     elif toks[i] + " " + toks[i+1][0:3] + " " + toks[i+2] + " " + toks[i+3][0:3] + " " + toks[i+4] == "JIKA VAR EQEQ VAR MAKA":
-        #         jikamaka += 1
-        #         if getVARIABLE(toks[i+1]) == getVARIABLE(toks[i+3]):
-        #             kondisi=1
-        #         else:
-        #             kondisi=0
-        #         i+=5
-        # else:
-        # try:
             if toks[i] == "KALAUTIDAK":
                 if kondisi == 0:
                      kondisi = 1
@@ -701,20 +633,6 @@ def parse(toks):
                         print("Sintaks Error : Penulisan variabel tidak benar pada argumen \"ULANG\"")
                         exit()
                 i+=5
-                # print n_toks_loop
-
-            # elif toks[i] + " " + toks[i+1][0:3] + " " + toks[i+2] + " " + toks[i+3][0:3] + " " + toks[i+4] == "JIKA VAR EQEQ VAR MAKA":
-            #     jikamaka += 1
-            #     if getVARIABLE(toks[i+1]) == getVARIABLE(toks[i+3]):
-            #         kondisi=1
-            #     else:
-            #         kondisi=0
-            #     i+=5
-                # i+=3
-        # print(symbols)
-        # except:
-        #     print("Sintaks Error!")
-        #     exit()
 
 def jalan():
     data = open_file(argv[1])
