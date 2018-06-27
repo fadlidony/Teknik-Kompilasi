@@ -1,12 +1,13 @@
 # Teknik Kompilasi
-Teknik Kompilasi membuat bahsa pemrograman sendiri berbasis bahasa python. </ br> Spesifikasi : Python V2
+Teknik Kompilasi membuat bahsa pemrograman sendiri berbasis bahasa python.  
+Spesifikasi : Python V2
 
 ### Langkah untuk menjalankan:
 kompiler.py skrip.ind
 
 ### Syntax
-"Tulis" untuk menulis dalam program
-"$a" untuk mendefinisikan variabel a
+"Tulis" untuk menulis dalam program  
+"$a" untuk mendefinisikan variabel a  
 lebih lengkapnya terdapat pada contoh dalam file skrip.ind
 
 ### Contact us
