@@ -3,7 +3,7 @@ Teknik Kompilasi membuat bahsa pemrograman sendiri berbasis bahasa python.
 Spesifikasi : Python V2
 
 ### Langkah untuk menjalankan:
-kompiler.py skrip.ind
+python kompiler.py skrip.ind
 
 ### Syntax
 "Tulis" untuk menulis dalam program  
